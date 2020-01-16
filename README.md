@@ -1,44 +1,14 @@
-# F-Droid Client
+# PrivateFone Store Client
 
-[![build status](https://gitlab.com/fdroid/fdroidclient/badges/master/build.svg)](https://gitlab.com/fdroid/fdroidclient/builds)
-[![Translation status](https://hosted.weblate.org/widgets/f-droid/-/svg-badge.svg)](https://hosted.weblate.org/engage/f-droid/)
+* Fork from Fdroid Client:
+https://gitlab.com/fdroid/fdroidclient
 
-Client for [F-Droid](https://f-droid.org), the Free Software repository system
-for Android.
 
 ## Building with Gradle
 
     ./gradlew assembleRelease
 
-## Direct download
 
-You can [download the application](https://f-droid.org/FDroid.apk) directly
-from our site or [browse it in the repo](https://f-droid.org/app/org.fdroid.fdroid).
-
-## Contributing
-
-See our [Contributing doc](CONTRIBUTING.md) for information on how to report
-issues, translate the app into your language or help with development.
-
-## IRC
-
-We are on `#fdroid` and `#fdroid-dev` on Freenode. We hold weekly dev meetings
-on `#fdroid-dev` on Thursdays at 11:30h UTC, which usually last half an hour.
-
-## FAQ
-
-* Why does F-Droid require "Unknown Sources" to install apps by default?
-
-Because a regular Android app cannot act as a package manager on its
-own. To do so, it would require system privileges (see below), similar
-to what Google Play does.
-
-* Can I avoid enabling "Unknown Sources" by installing F-Droid as a
-  privileged system app?
-
-This used to be the case, but no longer is. Now the [Privileged
-Extension](https://gitlab.com/fdroid/privileged-extension) is the one that should be placed in
-the system. It can be bundled with a ROM or installed via a zip.
 ## License
 
 This program is Free Software: You can use, study share and improve it at your
@@ -59,9 +29,4 @@ released under an
 [Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
 
 
-## Translation
 
-Everything can be translated.  See
-[Translation and Localization](https://f-droid.org/docs/Translation_and_Localization)
-for more info.
-[![translation status](https://hosted.weblate.org/widgets/f-droid/-/f-droid/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
