@@ -1,16 +1,14 @@
-# F-Droid Client
+# PrivateFone Store Client
 
-[![build status](https://gitlab.com/fdroid/fdroidclient/badges/master/pipeline.svg)](https://gitlab.com/fdroid/fdroidclient/-/jobs)
-[![Translation status](https://hosted.weblate.org/widgets/f-droid/-/svg-badge.svg)](https://hosted.weblate.org/engage/f-droid/)
 
-Client for [F-Droid](https://f-droid.org), the Free Software repository system
-for Android.
+* Fork from Fdroid Client:
+https://gitlab.com/fdroid/fdroidclient
+
 
 ## Building with Gradle
 
     ./gradlew assembleRelease
 
-## Direct download
 
 You can [download the application](https://f-droid.org/F-Droid.apk) directly
 from our site or [browse it in the repo](https://f-droid.org/app/org.fdroid.fdroid).
@@ -50,6 +48,7 @@ This used to be the case, but no longer is. Now the [Privileged
 Extension](https://gitlab.com/fdroid/privileged-extension) is the one that should be placed in
 the system. It can be bundled with a ROM or installed via a zip.
 
+
 ## License
 
 This program is Free Software: You can use, study share and improve it at your
@@ -70,9 +69,4 @@ released under an
 [Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
 
 
-## Translation
 
-Everything can be translated.  See
-[Translation and Localization](https://f-droid.org/docs/Translation_and_Localization)
-for more info.
-[![translation status](https://hosted.weblate.org/widgets/f-droid/-/f-droid/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
