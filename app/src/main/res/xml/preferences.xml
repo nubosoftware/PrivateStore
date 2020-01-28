@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <PreferenceScreen
         android:key="pref_about"
         android:title="@string/about_title" />
+
 
     <PreferenceCategory android:title="@string/preference_category__my_apps">
         <PreferenceScreen android:title="@string/preference_manage_installed_apps">
@@ -12,6 +14,7 @@
                 android:targetClass="org.fdroid.fdroid.views.installed.InstalledAppsActivity"
                 android:targetPackage="@string/applicationId" />
         </PreferenceScreen>
+        <!--
         <PreferenceScreen
             android:summary="@string/repositories_summary"
             android:title="@string/menu_manage">
@@ -19,7 +22,7 @@
                 android:action="android.intent.action.MAIN"
                 android:targetClass="org.fdroid.fdroid.views.ManageReposActivity"
                 android:targetPackage="@string/applicationId" />
-        </PreferenceScreen>
+        </PreferenceScreen> -->
         <PreferenceScreen
             android:key="installHistory"
             android:summary="@string/install_history_summary"

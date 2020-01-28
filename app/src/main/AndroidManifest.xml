@@ -53,6 +53,14 @@
     <uses-permission android:name="android.permission.NFC" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <!-- Permission to recieve app list response from nubo settings -->
+    <uses-permission android:name="com.nubo.nubosettings.CAN_INSTALL_APP_LIST_RESP_PERM"/>
+
+    <!--  Declaring permission to send app list request-->
+    <permission android:name="com.nubo.nubosettings.CAN_INSTALL_APP_LIST_PERM"
+        android:label="app_list_request"
+        android:protectionLevel="dangerous"></permission>
+
     <application
         android:name=".FDroidApp"
         android:allowBackup="true"
@@ -124,7 +132,64 @@
             android:launchMode="singleInstance"
             android:process=":error_report" />
 
+
         <activity android:name=".views.ScreenShotsActivity" />
+
+        <receiver
+            android:name=".receiver.ConfigurationReceiver"
+            android:label="Configuration Receiver"
+            android:exported="true" >
+            <intent-filter>
+                <action
+                    android:name="com.nubo.appstore.SEND_CONF_REQUEST" />
+            </intent-filter>
+        </receiver>
+<!--
+        <service
+                android:name=".UpdateService"
+                android:permission="android.permission.BIND_JOB_SERVICE"
+                android:exported="false"/>
+        <service
+                android:name=".UpdateJobService"
+                android:exported="false"
+                android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service
+                android:name=".net.DownloaderService"
+                android:exported="false"/>
+        <service
+                android:name=".installer.InstallerService"
+                android:permission="android.permission.BIND_JOB_SERVICE"
+                android:exported="false"/>
+        <service
+                android:name=".CleanCacheService"
+                android:permission="android.permission.BIND_JOB_SERVICE"
+                android:exported="false"/>
+        <service
+                android:name=".CleanCacheJobService"
+                android:permission="android.permission.BIND_JOB_SERVICE"
+                android:exported="false"/>
+        <service
+                android:name=".DeleteCacheService"
+                android:permission="android.permission.BIND_JOB_SERVICE"
+                android:exported="false"/>
+        <service
+                android:name=".net.ConnectivityMonitorService"
+                android:permission="android.permission.BIND_JOB_SERVICE"
+                android:exported="false"/>
+        <service
+                android:name=".installer.InstallManagerService"
+                android:exported="false"/>
+        <service
+                android:name=".installer.InstallHistoryService"
+                android:exported="false"/>
+        <service
+                android:name=".data.InstalledAppProviderService"
+                android:permission="android.permission.BIND_JOB_SERVICE"
+                android:exported="false"/>
+        <service
+                android:name=".AddRepoIntentService"
+                android:exported="false"/> -->
+
 
         <activity
             android:name=".data.ObbUrlActivity"

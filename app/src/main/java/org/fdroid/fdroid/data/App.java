@@ -141,6 +141,7 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
     @JsonProperty("icon")
     public String iconFromApk;
 
+
     public String description;
 
     /**

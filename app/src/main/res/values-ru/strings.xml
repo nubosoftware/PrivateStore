@@ -150,7 +150,7 @@
     <string name="category_Money">Финансы</string>
     <string name="category_Sports_Health">Спорт и здоровье</string>
     <string name="category_Time">Часы</string>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="banner_updating_repositories">Обновление репозиториев</string>
     <string name="status_processing_xml_percent">Обработка %2$s / %3$s (%4$d%%) из %1$s</string>
     <string name="install_error_unknown">Не удалось установить из-за неизвестной ошибки</string>

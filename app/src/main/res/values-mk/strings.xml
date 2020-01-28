@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="SignatureMismatch">Новата верзија е потпишана со различен клуч од стариот. За да ја инсталирате новата верзија, најпрво деинсталирајте ја старата. Ве молиме направете го ова и обидете се повторно. (Имајте во предвид при деинсталирањето се бришат и податоците од апликацијата.)</string>
     <string name="version">Верзија</string>
     <string name="delete">Избриши</string>

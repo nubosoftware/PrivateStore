@@ -50,6 +50,7 @@ import org.fdroid.fdroid.data.RepoProvider;
 import org.fdroid.fdroid.data.RepoPushRequest;
 import org.fdroid.fdroid.data.Schema;
 import org.fdroid.fdroid.net.DownloaderFactory;
+import org.fdroid.fdroid.nubo.NuboUserApps;
 
 import java.io.File;
 import java.io.IOException;
@@ -111,6 +112,8 @@ public class IndexV1Updater extends IndexUpdater {
         }
         File destFile = null;
         Downloader downloader;
+        Log.e(TAG," update()", new Throwable());
+
         try {
             destFile = File.createTempFile("dl-", "", context.getCacheDir());
             destFile.deleteOnExit(); // this probably does nothing, but maybe...
@@ -119,13 +122,15 @@ public class IndexV1Updater extends IndexUpdater {
             downloader.setCacheTag(repo.lastetag);
             downloader.setListener(downloadListener);
             downloader.download();
-            hasChanged = downloader.hasChanged();
+
+            hasChanged = downloader.hasChanged() || NuboUserApps.getInstance(context).hasChanged();
 
             if (!hasChanged) {
                 return true;
             }
 
             processDownloadedIndex(destFile, downloader.getCacheTag());
+
         } catch (IOException e) {
             if (destFile != null) {
                 FileUtils.deleteQuietly(destFile);
@@ -240,6 +245,8 @@ public class IndexV1Updater extends IndexUpdater {
         repo.icon = getStringRepoValue(repoMap, "icon");
         repo.description = getStringRepoValue(repoMap, "description");
 
+        NuboUserApps.getInstance(context).setUpdated();
+
         // ensure the canonical URL is included in the "mirrors" list as the first entry
         LinkedHashSet<String> mirrors = new LinkedHashSet<>();
         mirrors.add(repo.address);
@@ -264,6 +271,11 @@ public class IndexV1Updater extends IndexUpdater {
                 if (packages != null) {
                     apks = packages.get(app.packageName);
                 }
+                if (!NuboUserApps.getInstance(context).canInstallApp(app.packageName)) {
+                    Log.e(TAG,"App is not enabled to user: "+app.packageName);
+                    continue;
+                }
+                Log.e(TAG,"Found app: "+app.packageName);
 
                 if (apks == null) {
                     Log.i(TAG, "processIndexV1 empty packages");

@@ -114,7 +114,7 @@
     <string name="swap_welcome">Tervetuloa F-Droidiin!</string>
     <string name="swap_confirm_connect">Haluatko saada sovelluksia kohteesta %1$s nyt\?</string>
     <string name="unstable_updates_summary">Ehdota päivityksiä epävakaisiin versioihin</string>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="login_password">Salasana</string>
     <string name="login_name">Käyttäjätunnus</string>
     <string name="repo_edit_credentials">Vaihda salasana</string>

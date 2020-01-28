@@ -54,7 +54,7 @@
     <string name="no_permissions">Sen permisos</string>
     <string name="no_handler_app">Non tes ningunha aplicación dispoñíbel que poida manexar %s.</string>
     <string name="theme">Aparencia</string>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="delete">Eliminar</string>
     <string name="enable_nfc_send">Activar envío NFC…</string>
     <string name="unstable_updates">Actualizacións inestábeis</string>

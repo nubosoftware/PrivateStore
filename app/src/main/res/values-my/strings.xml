@@ -129,7 +129,7 @@
     <string name="repo_name">အမည္</string>
     <string name="unknown">မသိပါ</string>
     <string name="repo_confirm_delete_title">Repository ကိုဖ်က္မလား?</string>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="deleting_repo">ယခုလက္ရွိ ရီပိုကိုဖ်က္ေနသည္.…</string>
     <string name="all_other_repos_fine">တျခားရီပိုအားလံုးသည္ ခ်ိဳ႕ယြင္းခ်က္မ်ားမရွိပါ.</string>
     <string name="global_error_updating_repos">အသစ္မြမ္းမံစဥ္ခ်ိဳ႕ယြင္းခ်က္ - %s</string>

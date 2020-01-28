@@ -117,7 +117,7 @@
     <string name="swap_view_available_networks">(Натиснете за преглед на наличните мрежи)</string>
     <string name="open_qr_code_scanner">Отваряне на четец на QR кодове</string>
     <string name="swap_welcome">Добре дошли в F-Droid!</string>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="theme_dark">Тъмна</string>
     <string name="back">Назад</string>
     <string name="bad_fingerprint">Грешен отпечатък</string>

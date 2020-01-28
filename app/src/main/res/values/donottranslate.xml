@@ -41,8 +41,8 @@
     </string-array>
     <string name="defaultTheme">followSystem</string>
 
-    <integer name="defaultOverData">1</integer> <!-- Preferences.OVER_NETWORK_ON_DEMAND -->
+    <integer name="defaultOverData">2</integer> <!-- Preferences.OVER_NETWORK_ON_DEMAND -->
     <integer name="defaultOverWifi">2</integer> <!-- Preferences.OVER_NETWORK_ALWAYS -->
 
-    <integer name="defaultUpdateInterval">3</integer>
+    <integer name="defaultUpdateInterval">6</integer>
 </resources>

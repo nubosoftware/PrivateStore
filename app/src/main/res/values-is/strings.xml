@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="version">Útgáfa</string>
     <string name="delete">Eyða</string>
     <string name="login_name">Notandanafn</string>

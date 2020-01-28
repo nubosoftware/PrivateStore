@@ -127,15 +127,16 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.setOnNavigationItemSelectedListener(item -> {
             pager.scrollToPosition(item.getOrder());
 
-            if (item.getItemId() == R.id.nearby) {
+            /*if (item.getItemId() == R.id.nearby) {
                 NearbyViewBinder.updateUsbOtg(MainActivity.this);
-            }
+
+            }*/
 
             return true;
 
         });
-        updatesBadge = bottomNavigation.getOrCreateBadge(R.id.updates);
-        updatesBadge.setVisible(false);
+//        updatesBadge = bottomNavigation.getOrCreateBadge(R.id.updates);
+//        updatesBadge.setVisible(false);
 
         IntentFilter updateableAppsFilter = new IntentFilter(AppUpdateStatusManager.BROADCAST_APPSTATUS_LIST_CHANGED);
         updateableAppsFilter.addAction(AppUpdateStatusManager.BROADCAST_APPSTATUS_CHANGED);
@@ -155,10 +156,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initialRepoUpdateIfRequired() {
-        if (Preferences.get().isIndexNeverUpdated() && !UpdateService.isUpdating()) {
+        UpdateService.updateNow(this);
+        /*if (Preferences.get().isIndexNeverUpdated() && !UpdateService.isUpdating()) {
             Utils.debugLog(TAG, "We haven't done an update yet. Forcing repo update.");
             UpdateService.updateNow(this);
-        }
+        }*/
     }
 
     @Override
@@ -167,10 +169,10 @@ public class MainActivity extends AppCompatActivity {
 
         FDroidApp.checkStartTor(this, Preferences.get());
 
-        if (getIntent().hasExtra(EXTRA_VIEW_UPDATES)) {
+        /*if (getIntent().hasExtra(EXTRA_VIEW_UPDATES)) {
             getIntent().removeExtra(EXTRA_VIEW_UPDATES);
             setSelectedMenuInNav(R.id.updates);
-        } else if (getIntent().hasExtra(EXTRA_VIEW_NEARBY)) {
+        } else */ if (getIntent().hasExtra(EXTRA_VIEW_NEARBY)) {
             getIntent().removeExtra(EXTRA_VIEW_NEARBY);
             setSelectedMenuInNav(R.id.nearby);
         } else if (getIntent().hasExtra(EXTRA_VIEW_SETTINGS)) {

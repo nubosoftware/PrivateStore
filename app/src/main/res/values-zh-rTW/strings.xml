@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="SignatureMismatch">應用程式的新舊版本使用了不同的金鑰簽署。如要安裝新版本，您必須先解除安裝舊版本。請於完成該操作後再試一次(注意：解除安裝將抹除該應用程式內部已存儲的資料)</string>
     <string name="installIncompatible">應用程式與您的裝置不相容。仍要繼續安裝嗎？</string>
     <string name="version">版本</string>

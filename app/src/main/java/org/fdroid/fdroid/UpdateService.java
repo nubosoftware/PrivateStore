@@ -50,6 +50,10 @@ import org.fdroid.fdroid.installer.InstallManagerService;
 import org.fdroid.fdroid.net.BluetoothDownloader;
 import org.fdroid.fdroid.net.ConnectivityMonitorService;
 
+import org.fdroid.fdroid.nubo.NuboUserApps;
+import org.fdroid.fdroid.views.main.MainActivity;
+
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -105,6 +109,7 @@ public class UpdateService extends JobIntentService {
     }
 
     public static void updateRepoNow(Context context, String address) {
+        Log.e(TAG,"updateRepoNow");
         Intent intent = new Intent(context, UpdateService.class);
         intent.putExtra(EXTRA_MANUAL_UPDATE, true);
         if (!TextUtils.isEmpty(address)) {
@@ -153,6 +158,7 @@ public class UpdateService extends JobIntentService {
     public static void schedule(Context context) {
         Preferences prefs = Preferences.get();
         long interval = prefs.getUpdateInterval();
+        Log.e(TAG,"getUpdateInterval: "+interval);
         int data = prefs.getOverData();
         int wifi = prefs.getOverWifi();
         boolean scheduleNewJob =
@@ -422,6 +428,8 @@ public class UpdateService extends JobIntentService {
 
         try {
             final Preferences fdroidPrefs = Preferences.get();
+
+            NuboUserApps.getInstance(this).update();
 
             // Grab some preliminary information, then we can release the
             // database while we do all the downloading, etc...

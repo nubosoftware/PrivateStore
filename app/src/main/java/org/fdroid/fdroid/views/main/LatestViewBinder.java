@@ -115,9 +115,11 @@ class LatestViewBinder implements LoaderManager.LoaderCallbacks<Cursor> {
         if (id != LOADER_ID) {
             return null;
         }
+
         final String table = AppMetadataTable.NAME;
         final String added = table + "." + Cols.ADDED;
         final String lastUpdated = table + "." + Cols.LAST_UPDATED;
+
         return new CursorLoader(
                 activity,
                 AppProvider.getLatestTabUri(),

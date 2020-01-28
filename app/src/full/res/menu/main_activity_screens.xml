@@ -17,6 +17,7 @@
         android:orderInCategory="1"
         android:title="@string/main_menu__categories"
         app:showAsAction="ifRoom|withText" />
+    <!--
     <item
         android:id="@+id/nearby"
         android:enabled="true"
@@ -30,7 +31,7 @@
         android:icon="@drawable/ic_updates"
         android:orderInCategory="3"
         android:title="@string/main_menu__updates"
-        app:showAsAction="ifRoom|withText" />
+        app:showAsAction="ifRoom|withText" /> -->
     <item
         android:id="@+id/settings"
         android:enabled="true"
