@@ -155,7 +155,7 @@
     <string name="perms_new_perm_prefix">חדש:</string>
     <string name="perms_description_app">מסופק על ידי %1$s.</string>
     <string name="downloading">מתבצעת הורדה…</string>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="app_incompatible">אין תאימות</string>
     <string name="back">אחורה</string>
     <string name="repo_searching_address">מתבצע חיפוש אחר מאגר חבילות אצל 

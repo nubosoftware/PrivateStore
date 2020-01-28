@@ -115,7 +115,7 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
     public String packageName = "unknown";
     public String name = "Unknown";
 
-    public String summary = "Unknown application";
+    public String summary = "Application";
     public String icon;
 
     public String description;

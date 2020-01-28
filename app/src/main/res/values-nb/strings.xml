@@ -139,7 +139,7 @@
     <string name="open_qr_code_scanner">Åpne QR-kode-skanner</string>
     <string name="swap_welcome">Velkommen til F-Droid!</string>
     <string name="swap_confirm_connect">Ønsker du å hente pakker fra %1$s nå?</string>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="theme_dark">Mørkt</string>
     <string name="unstable_updates">Ustabile oppdateringer</string>
     <string name="unstable_updates_summary">Foreslå oppdatering til ustabile versjoner</string>

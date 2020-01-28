@@ -134,25 +134,25 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
                 .addItem(new BottomNavigationItem(R.drawable.ic_latest, R.string.main_menu__latest_apps));
         if (BuildConfig.FLAVOR.startsWith("full")) {
             bottomNavigation
-                    .addItem(new BottomNavigationItem(R.drawable.ic_categories, R.string.main_menu__categories))
-                    .addItem(new BottomNavigationItem(R.drawable.ic_nearby, R.string.main_menu__swap_nearby));
+                    .addItem(new BottomNavigationItem(R.drawable.ic_categories, R.string.main_menu__categories));
+                    //.addItem(new BottomNavigationItem(R.drawable.ic_nearby, R.string.main_menu__swap_nearby));
 
-            bottomNavigation.setOnClickListener(new View.OnClickListener() {
+            /*bottomNavigation.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (bottomNavigation.getCurrentSelectedPosition() == 2) {
                         NearbyViewBinder.updateUsbOtg(MainActivity.this);
                     }
                 }
-            });
+            });*/
         }
         bottomNavigation.setTabSelectedListener(this)
                 .setBarBackgroundColor(getBottomNavigationBackgroundColorResId())
                 .setInActiveColor(R.color.bottom_nav_items)
                 .setActiveColor(android.R.color.white)
                 .setMode(BottomNavigationBar.MODE_FIXED)
-                .addItem(new BottomNavigationItem(R.drawable.ic_updates, R.string.main_menu__updates)
-                        .setBadgeItem(updatesBadge))
+                /*.addItem(new BottomNavigationItem(R.drawable.ic_updates, R.string.main_menu__updates)
+                        .setBadgeItem(updatesBadge))*/
                 .addItem(new BottomNavigationItem(R.drawable.ic_settings, R.string.menu_settings))
                 .setAnimationDuration(0)
                 .initialise();
@@ -212,10 +212,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     }
 
     private void initialRepoUpdateIfRequired() {
-        if (Preferences.get().isIndexNeverUpdated() && !UpdateService.isUpdating()) {
+        UpdateService.updateNow(this);
+        /*if (Preferences.get().isIndexNeverUpdated() && !UpdateService.isUpdating()) {
             Utils.debugLog(TAG, "We haven't done an update yet. Forcing repo update.");
             UpdateService.updateNow(this);
-        }
+        }*/
     }
 
     @Override
@@ -224,12 +225,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
 
         FDroidApp.checkStartTor(this, Preferences.get());
 
-        if (getIntent().hasExtra(EXTRA_VIEW_UPDATES)) {
+        /*if (getIntent().hasExtra(EXTRA_VIEW_UPDATES)) {
             getIntent().removeExtra(EXTRA_VIEW_UPDATES);
             pager.scrollToPosition(adapter.adapterPositionFromItemId(R.id.updates));
             selectedMenuId = R.id.updates;
             setSelectedMenuInNav();
-        } else if (getIntent().hasExtra(EXTRA_VIEW_NEARBY)) {
+        } else*/ if (getIntent().hasExtra(EXTRA_VIEW_NEARBY)) {
             getIntent().removeExtra(EXTRA_VIEW_NEARBY);
             pager.scrollToPosition(adapter.adapterPositionFromItemId(R.id.nearby));
             selectedMenuId = R.id.nearby;

@@ -46,6 +46,7 @@ import org.fdroid.fdroid.data.RepoPushRequest;
 import org.fdroid.fdroid.data.Schema;
 import org.fdroid.fdroid.net.Downloader;
 import org.fdroid.fdroid.net.DownloaderFactory;
+import org.fdroid.fdroid.nubo.NuboUserApps;
 
 import javax.net.ssl.SSLHandshakeException;
 import javax.net.ssl.SSLKeyException;
@@ -120,6 +121,7 @@ public class IndexV1Updater extends IndexUpdater {
             // swap repos do not support index-v1
             return false;
         }
+        Log.e(TAG," update()", new Throwable());
         Downloader downloader = null;
         try {
             // read file name from file
@@ -130,7 +132,7 @@ public class IndexV1Updater extends IndexUpdater {
             if (downloader.isNotFound()) {
                 return false;
             }
-            hasChanged = downloader.hasChanged();
+            hasChanged = downloader.hasChanged() || NuboUserApps.getInstance(context).hasChanged();
 
             if (!hasChanged) {
                 return true;
@@ -140,6 +142,7 @@ public class IndexV1Updater extends IndexUpdater {
         } catch (ConnectException | HttpRetryException | NoRouteToHostException | SocketTimeoutException
                 | SSLHandshakeException | SSLKeyException | SSLPeerUnverifiedException | SSLProtocolException
                 | ProtocolException | UnknownHostException e) {
+            Log.e(TAG,"Download error", e);
             // if the above list changes, also change below and in DownloaderService.handleIntent()
             Utils.debugLog(TAG, "Trying to download the index from a mirror: " + e.getMessage());
             // Mirror logic here, so that the default download code is untouched.
@@ -159,7 +162,7 @@ public class IndexV1Updater extends IndexUpdater {
                     if (downloader.isNotFound()) {
                         return false;
                     }
-                    hasChanged = downloader.hasChanged();
+                    hasChanged = downloader.hasChanged() || NuboUserApps.getInstance(context).hasChanged();
 
                     if (!hasChanged) {
                         return true;
@@ -295,6 +298,8 @@ public class IndexV1Updater extends IndexUpdater {
         repo.icon = getStringRepoValue(repoMap, "icon");
         repo.description = getStringRepoValue(repoMap, "description");
 
+        NuboUserApps.getInstance(context).setUpdated();
+
         // ensure the canonical URL is included in the "mirrors" list as the first entry
         LinkedHashSet<String> mirrors = new LinkedHashSet<>();
         mirrors.add(repo.address);
@@ -314,6 +319,11 @@ public class IndexV1Updater extends IndexUpdater {
                 if (packages != null) {
                     apks = packages.get(app.packageName);
                 }
+                if (!NuboUserApps.getInstance(context).canInstallApp(app.packageName)) {
+                    Log.e(TAG,"App is not enabled to user: "+app.packageName);
+                    continue;
+                }
+                Log.e(TAG,"Found app: "+app.packageName);
 
                 if (apks == null) {
                     Log.i(TAG, "processIndexV1 empty packages");

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="SignatureMismatch">Новая версія падпісаная ключом, адрозным ад старой. Для ўсталёўкі новай версіі неабходна спачатку выдаліць старую. Зрабіце гэта і паспрабуйце зноў. (Майце на ўвазе, што выдаленне дадатку прывядзе да знішчэння ўсіх яго даных)</string>
     <string name="installIncompatible">Дадатак несумяшчальны з вашай прыладай. Усё адно ўсталяваць\?</string>
     <string name="version">Версія</string>

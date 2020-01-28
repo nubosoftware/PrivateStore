@@ -10,12 +10,12 @@
     <item
             app:showAsAction="ifRoom|withText"
             android:id="@+id/categories"/>
-    <item
+    <!--<item
             app:showAsAction="ifRoom|withText"
-            android:id="@+id/nearby"/>
-    <item
+            android:id="@+id/nearby"/>-->
+    <!-- <item
             app:showAsAction="ifRoom|withText"
-            android:id="@+id/updates"/>
+            android:id="@+id/updates"/> -->
     <item
             app:showAsAction="ifRoom|withText"
             android:id="@+id/settings"/>

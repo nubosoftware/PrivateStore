@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
 
     <string name="SignatureMismatch">Versioni i ri është i nënshkruar me një çelës të ndryshëm nga ai i vjetri. Për të
         instaluar versionin e ri, së pari duhet të çinstalohet versioni i vjetër. Ju lutem provojeni dhe provoni

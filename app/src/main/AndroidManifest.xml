@@ -58,6 +58,14 @@
     <uses-permission android:name="android.permission.NFC"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
+    <!-- Permission to recieve app list response from nubo settings -->
+    <uses-permission android:name="com.nubo.nubosettings.CAN_INSTALL_APP_LIST_RESP_PERM"/>
+
+    <!--  Declaring permission to send app list request-->
+    <permission android:name="com.nubo.nubosettings.CAN_INSTALL_APP_LIST_PERM"
+        android:label="app_list_request"
+        android:protectionLevel="dangerous"></permission>
+
     <application
             android:name=".FDroidApp"
             android:icon="@drawable/ic_launcher"
@@ -228,6 +236,16 @@
         <receiver android:name=".receiver.DeviceStorageReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".receiver.ConfigurationReceiver"
+            android:label="Configuration Receiver"
+            android:exported="true" >
+            <intent-filter>
+                <action
+                    android:name="com.nubo.appstore.SEND_CONF_REQUEST" />
             </intent-filter>
         </receiver>
 

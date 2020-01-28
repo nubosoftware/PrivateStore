@@ -15,8 +15,9 @@ def getVersionName = { ->
 def isCi = "true".equals(System.getenv("CI"))
 def preDexEnabled = "true".equals(System.getProperty("pre-dex", "true"))
 
-def fullApplicationId = "org.fdroid.fdroid"
-def basicApplicationId = "org.fdroid.basic"
+//def fullApplicationId = "org.fdroid.fdroid"
+def fullApplicationId = "com.nubo.appstore"
+def basicApplicationId = "com.nubo.appstore.basic"
 // yes, this actually needs both quotes https://stackoverflow.com/a/41391841
 def privilegedExtensionApplicationId = '"org.fdroid.fdroid.privileged"'
 
@@ -38,6 +39,15 @@ android {
         testInstrumentationRunnerArguments disableAnalytics: 'true'
     }
 
+    signingConfigs {
+        config {
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+            storeFile file(RELEASE_STORE_FILE)
+        }
+    }
+
     buildTypes {
         // use proguard on debug too since we have unknowingly broken
         // release builds before.
@@ -48,6 +58,7 @@ android {
             buildConfigField "String", "PRIVILEGED_EXTENSION_PACKAGE_NAME", privilegedExtensionApplicationId
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'src/androidTest/proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
         debug {
             applicationIdSuffix ".debug"

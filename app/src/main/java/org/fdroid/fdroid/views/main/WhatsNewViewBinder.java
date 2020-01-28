@@ -104,23 +104,24 @@ class WhatsNewViewBinder implements LoaderManager.LoaderCallbacks<Cursor> {
 
         // select that have all required items:
         String selection = "(" + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.NAME + " != ''"
-                + " AND " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.SUMMARY + " != ''"
-                + " AND " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.DESCRIPTION + " != ''"
-                + " AND " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.LICENSE + " != ''"
-                + " AND " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.WHATSNEW + " != ''";
+                + " AND " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.SUMMARY + " != ''";
+                //+ " AND " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.DESCRIPTION + " != ''"
+                //+ " AND " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.LICENSE + " != ''"
+                //+ " AND " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.WHATSNEW + " != ''";
         if (!"en".equals(Locale.getDefault().getLanguage())) {
             // only require localization if using a non-English locale
             selection += " AND " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.IS_LOCALIZED + " = 1";
         }
+        selection += ") ";
         //  and at least one optional item:
-        selection += ") AND ("
+        /*selection += ") AND ("
                 + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.SEVEN_INCH_SCREENSHOTS + " IS NOT NULL "
                 + " OR " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.PHONE_SCREENSHOTS + " IS NOT NULL "
                 + " OR " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.TEN_INCH_SCREENSHOTS + " IS NOT NULL "
                 + " OR " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.TV_SCREENSHOTS + " IS NOT NULL "
                 + " OR " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.WEAR_SCREENSHOTS + " IS NOT NULL "
                 + " OR " + AppMetadataTable.NAME + "." + AppMetadataTable.Cols.FEATURE_GRAPHIC + " IS NOT NULL "
-                + ")";
+                + ")";*/
 
         return new CursorLoader(
                 activity,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="SignatureMismatch">Uus versioon on allkirjastatud vana versiooniga võrreldes erineva võtmega. Uue versiooni paigaldamiseks on vaja esmalt eemaldada vana. Palun tee seda ja proovi uuesti. (Tähelepanu: eemaldamisel kustutatakse rakendusega seotud andmed.)</string>
     <string name="installIncompatible">Rakendus ei ühildu su seadmega. Kas paigaldada ta ikkagi?</string>
     <string name="version">Versioon</string>

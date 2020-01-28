@@ -66,17 +66,17 @@ class MainViewAdapter extends RecyclerView.Adapter<MainViewController> {
     @Override
     public void onViewDetachedFromWindow(@NonNull MainViewController holder) {
         long viewType = getItemId(holder.getAdapterPosition());
-        if (viewType == R.id.updates) {
+        /*if (viewType == R.id.updates) {
             holder.unbindUpdates();
-        }
+        }*/
     }
 
     @Override
     public void onViewAttachedToWindow(@NonNull MainViewController holder) {
         long viewType = getItemId(holder.getAdapterPosition());
-        if (viewType == R.id.updates) {
+        /*if (viewType == R.id.updates) {
             holder.bindUpdates();
-        }
+        }*/
     }
 
     @NonNull
@@ -93,10 +93,10 @@ class MainViewAdapter extends RecyclerView.Adapter<MainViewController> {
             case R.id.nearby:
                 holder.bindSwapView();
                 break;
-            case R.id.updates:
+            //case R.id.updates:
                 // Hold of until onViewAttachedToWindow, because that is where we want to start listening
                 // for broadcast events (which is what the data binding does).
-                break;
+            //    break;
             case R.id.settings:
                 holder.bindSettingsView();
                 break;

@@ -107,7 +107,7 @@
     <string name="open_qr_code_scanner">Otwórz skaner QR</string>
     <string name="swap_welcome">Witaj w F-Droid!</string>
     <string name="swap_confirm_connect">Czy wymienić aplikacje z %1$s?</string>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="SignatureMismatch">Nowa wersja jest podpisana cyfrowo z innym kluczem niż obecna wersja. Aby
         zainstalować nową wersję, obecna musi zostać najpierw odinstalowana (odinstalowanie aplikacji spowoduje
         usunięcie jej danych i ustawień)

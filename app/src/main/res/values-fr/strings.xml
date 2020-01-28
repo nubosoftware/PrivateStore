@@ -139,7 +139,7 @@
     <string name="open_qr_code_scanner">Ouvrir le scanner de code QR</string>
     <string name="swap_welcome">Bienvenue dans F-Droid !</string>
     <string name="swap_confirm_connect">Voulez-vous recevoir des applis de %1$s maintenant ?</string>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="unstable_updates">Mises à jour instables</string>
     <string name="unstable_updates_summary">Proposer les mises à jour vers des versions instables</string>
     <string name="about_source">Code source</string>

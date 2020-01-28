@@ -31,7 +31,7 @@
     <string name="expert">Експертний режим</string>
     <string name="search_hint">Пошук застосунків</string>
     <string name="appcompatibility">Сумісність застосунків</string>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="installIncompatible">Застосунок, несумісний з вашим пристроєм, встановити попри все?</string>
     <string name="delete">Видалити</string>
     <string name="other">Інше</string>

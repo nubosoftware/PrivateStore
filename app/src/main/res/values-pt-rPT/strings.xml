@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="SignatureMismatch">A nova versão está assinada com uma chave diferente da antiga. Para instalar a nova
         versão, tem que desinstalar a antiga. Remova a aplicação e tente novamente. (Tenha em atenção que irá apagar
         todos os dados guardados pela aplicação)

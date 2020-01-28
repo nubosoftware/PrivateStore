@@ -31,6 +31,7 @@ import org.apache.commons.io.FileUtils;
 import org.fdroid.fdroid.BuildConfig;
 import org.fdroid.fdroid.FDroidApp;
 import org.fdroid.fdroid.Utils;
+import org.fdroid.fdroid.nubo.NuboUserApps;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -140,7 +141,12 @@ public class HttpDownloader extends Downloader {
             case HttpURLConnection.HTTP_OK:
                 String headETag = tmpConn.getHeaderField(HEADER_FIELD_ETAG);
                 contentLength = tmpConn.getContentLength();
-                if (!TextUtils.isEmpty(cacheTag)) {
+                NuboUserApps nuboApps =  NuboUserApps.tryGetInstance();
+                boolean newNuboApps = false;
+                if (nuboApps != null && nuboApps.hasChanged()) {
+                    newNuboApps = true;
+                }
+                if (!TextUtils.isEmpty(cacheTag) && !newNuboApps) {
                     if (cacheTag.equals(headETag)) {
                         Utils.debugLog(TAG, urlString + " cached, not downloading: " + headETag);
                         return;

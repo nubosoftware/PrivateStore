@@ -146,7 +146,7 @@
     <string name="open_qr_code_scanner">Apri lo scanner per codici QR</string>
     <string name="swap_welcome">Benvenuto su F-Droid!</string>
     <string name="swap_confirm_connect">Vuoi ricevere le app da %1$s?</string>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">Store</string>
     <string name="app_incompatible">Non compatibile</string>
     <string name="app_inst_known_source">Installato (da %s)</string>
     <string name="app_inst_unknown_source">Installato (da fonte sconosciuta)</string>
