@@ -26,8 +26,7 @@ android {
 
     defaultConfig {
         versionCode 1015050
-        versionName getVersionName()
-
+        versionName "3.2.0.01"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         minSdkVersion 22
         //noinspection ExpiredTargetSdkVersion
